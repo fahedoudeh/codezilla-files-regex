@@ -1,4 +1,5 @@
 import csv
+import prettytable
 
 def main():
     # Read Employees Dat
@@ -54,11 +55,15 @@ def write_csv_file(file_name, new_data):
 if __name__ == '__main__':
     main()
 
-print(help(read_csv_file))    
+ 
 
 
 
+with open("employees_data_new") as fp:
+    mytable = prettytable.from_csv(fp)
 
+print(mytable)   
+help(prettytable) 
 
 # you can define the key for sorted data in the method sorted(list, key= lambda x: x[-1] ) as a function or using lambda
 # def salary(list_data):
